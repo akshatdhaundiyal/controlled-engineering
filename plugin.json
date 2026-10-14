@@ -1,0 +1,19 @@
+{
+  "name": "controlled-engineering",
+  "version": "1.0.0",
+  "description": "Controlled Agent SDLC: Software engineering rigor, explicit human checkpoints, ADRs, test-driven contracts, and zero black-box magic for AI coding agents.",
+  "author": {
+    "name": "Akshat Dhaundiyal"
+  },
+  "repository": "",
+  "license": "MIT",
+  "keywords": [
+    "software-engineering",
+    "sdlc",
+    "adr",
+    "verification-contracts",
+    "checkpoint-and-explain",
+    "anti-magic",
+    "controlled-agent-sdlc"
+  ]
+}
