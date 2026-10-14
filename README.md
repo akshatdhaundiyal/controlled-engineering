@@ -10,12 +10,13 @@ Unlike autonomous agent loops that modify multiple files without explanation or 
 
 | Gate | Skill | Trigger | Deliverable & Contract |
 | :--- | :--- | :--- | :--- |
-| **0. Scope Freeze** | `/eng-rfc` | Starting a feature or refactor | 1-page RFC defining Problem, Goals, and strict **Non-Goals**. Human signs off on scope before code. |
-| **1. Architecture Decision** | `/eng-adr` | Technical forks or structural choices | 1-page ADR comparing 2–3 concrete options with explicit tradeoffs and human veto. |
-| **2. Verification Contract** | `/eng-verify` | Pre-implementation | Executable test commands, assertion matrix, and failure traps defined upfront (strict TDD). |
-| **3. Checkpoint & Explain** | `/eng-checkpoint` | Implementation execution | Atomic units (<150 lines diff) with a mandatory **Pre-Generation Audit** and human sign-off per unit. |
-| **4. Static Analysis & CI** | `/eng-audit` | Post-implementation | Project-native test runner, linter, and type checker execution producing an objective scorecard. |
-| **5. Knowledge Compounding** | `/eng-compound` | Feature completion | High-signal, non-redundant learnings updating repo rules (`AGENTS.md`) without doc rot. |
+| **Orchestrator** | `/ctl-eng` | Any stage / status check | Smart assessment and lifecycle routing |
+| **0. Scope Freeze** | `/ctl-eng-rfc` | Starting a feature or refactor | 1-page RFC defining Problem, Goals, and strict **Non-Goals**. Human signs off on scope before code. |
+| **1. Architecture Decision** | `/ctl-eng-adr` | Technical forks or structural choices | 1-page ADR comparing 2–3 concrete options with explicit tradeoffs and human veto. |
+| **2. Verification Contract** | `/ctl-eng-verify` | Pre-implementation | Executable test commands, assertion matrix, and failure traps defined upfront (strict TDD). |
+| **3. Checkpoint & Explain** | `/ctl-eng-checkpoint` | Implementation execution | Atomic units (<150 lines diff) with a mandatory **Pre-Generation Audit** and human sign-off per unit. |
+| **4. Static Analysis & CI** | `/ctl-eng-audit` | Post-implementation | Project-native test runner, linter, and type checker execution producing an objective scorecard. |
+| **5. Knowledge Compounding** | `/ctl-eng-compound` | Feature completion | High-signal, non-redundant learnings updating repo rules (`AGENTS.md`) without doc rot. |
 
 ---
 

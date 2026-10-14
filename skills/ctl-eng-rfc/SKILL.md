@@ -1,5 +1,5 @@
 ---
-name: eng-rfc
+name: ctl-eng-rfc
 description: "Interactive RFC and Scope Freeze for features, refactors, and systems work. Defines explicit Problem, Goals, Non-Goals, and Technical Constraints before any code or architecture is designed. Enforces a human approval checkpoint."
 argument-hint: "[optional: feature or change description]"
 ---

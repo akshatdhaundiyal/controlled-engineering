@@ -1,5 +1,5 @@
 ---
-name: eng-checkpoint
+name: ctl-eng-checkpoint
 description: "Atomic unit implementation executor enforcing the 'Checkpoint & Explain' protocol. Requires a mandatory Pre-Generation Audit (Core operation, Deliberate exclusions, Diff preview) and human approval before touching disk."
 argument-hint: "[optional: unit number or description]"
 ---

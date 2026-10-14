@@ -1,5 +1,5 @@
 ---
-name: eng-adr
+name: ctl-eng-adr
 description: "Lightweight Architecture Decision Record (ADR) generator and tradeoff analyzer. Evaluates 2-3 concrete options, documents deliberate anti-pattern exclusions, and enforces an explicit human architectural veto before implementation."
 argument-hint: "[optional: architectural decision title or dilemma]"
 ---

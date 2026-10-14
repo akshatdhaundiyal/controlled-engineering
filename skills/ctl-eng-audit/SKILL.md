@@ -1,5 +1,5 @@
 ---
-name: eng-audit
+name: ctl-eng-audit
 description: "Repository-native static analysis, lint, and full test suite verification gate. Executes linters, type-checkers, and test suites, compiling a clean, objective quality scorecard."
 argument-hint: "[optional: audit target or full]"
 ---

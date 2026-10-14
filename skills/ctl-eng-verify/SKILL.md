@@ -1,5 +1,5 @@
 ---
-name: eng-verify
+name: ctl-eng-verify
 description: "Test-Driven Verification Contract generator. Establishes exact shell commands, acceptance criteria, invariant matrices, and failure traps before implementation begins."
 argument-hint: "[optional: target feature or component]"
 ---

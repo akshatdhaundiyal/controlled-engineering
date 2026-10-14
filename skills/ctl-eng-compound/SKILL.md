@@ -1,5 +1,5 @@
 ---
-name: eng-compound
+name: ctl-eng-compound
 description: "Durable institutional learning engine. Captures verified, non-obvious engineering insights and edge-case invariants, updating repo instructions (AGENTS.md) or docs/solutions/ without documentation rot."
 argument-hint: "[optional: topic or learning summary]"
 ---
