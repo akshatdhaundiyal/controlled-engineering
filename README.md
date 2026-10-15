@@ -6,17 +6,27 @@ Unlike autonomous agent loops that modify multiple files without explanation or 
 
 ---
 
-## 🏛 The 6 SDLC Gates
+## 🏛 The SDLC Lifecycle & Debugging Suite
 
-| Gate | Skill | Trigger | Deliverable & Contract |
+| Gate / Mode | Command | When to Use | Deliverable & Contract |
 | :--- | :--- | :--- | :--- |
-| **Orchestrator** | `/ctl-eng` | Any stage / status check | Smart assessment and lifecycle routing |
-| **0. Scope Freeze** | `/ctl-eng-rfc` | Starting a feature or refactor | 1-page RFC defining Problem, Goals, and strict **Non-Goals**. Human signs off on scope before code. |
-| **1. Architecture Decision** | `/ctl-eng-adr` | Technical forks or structural choices | 1-page ADR comparing 2–3 concrete options with explicit tradeoffs and human veto. |
-| **2. Verification Contract** | `/ctl-eng-verify` | Pre-implementation | Executable test commands, assertion matrix, and failure traps defined upfront (strict TDD). |
-| **3. Checkpoint & Explain** | `/ctl-eng-checkpoint` | Implementation execution | Atomic units (<150 lines diff) with a mandatory **Pre-Generation Audit** and human sign-off per unit. |
-| **4. Static Analysis & CI** | `/ctl-eng-audit` | Post-implementation | Project-native test runner, linter, and type checker execution producing an objective scorecard. |
+| **Orchestrator** | `/ctl-eng` | Any stage / status check | Smart state assessment and lifecycle routing |
+| **0. Scope Freeze** | `/ctl-eng-rfc` | Starting a feature or refactor | 1-page RFC defining Problem, Goals, and strict **Non-Goals**. |
+| **1. Architecture Decision** | `/ctl-eng-adr` | Technical forks or structural choices | 1-page ADR with **Red-Team Lenses** (YAGNI, Skeptic, Maintainability) & human veto. |
+| **2. Verification Contract** | `/ctl-eng-verify` | Pre-implementation | Executable test commands, assertion matrix, and failure traps (strict TDD). |
+| **3. Checkpoint & Explain** | `/ctl-eng-checkpoint` | Implementation execution | Atomic units (<150 lines diff) with **Pre-Generation Audit** + **Simplification Pass**. |
+| **4. Static Analysis & CI** | `/ctl-eng-audit` | Post-implementation | Project-native test runner, linter, and type checker scorecard. |
 | **5. Knowledge Compounding** | `/ctl-eng-compound` | Feature completion | High-signal, non-redundant learnings updating repo rules (`AGENTS.md`) without doc rot. |
+| **Bug Diagnosis** | `/ctl-eng-debug` | When tests fail or bugs occur | 4-phase scientific root-cause isolation & minimal surgical patch. |
+
+---
+
+## 🔬 The 4-Phase Debugging Protocol (`/ctl-eng-debug`)
+
+1. **Deterministic Reproduction**: Minimal failing test fixture executed natively before any production code is touched.
+2. **Root-Cause Isolation**: Trace execution backward to isolate the exact line and runtime divergence.
+3. **Hypothesis & Explanation Checkpoint**: Plain-English explanation of the failure mechanism presented to the human for approval.
+4. **Surgical Patch & Verification**: Minimal in-place fix applied and validated with regression tests.
 
 ---
 

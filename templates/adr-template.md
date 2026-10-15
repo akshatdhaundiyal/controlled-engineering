@@ -32,27 +32,34 @@
 
 ---
 
-## 3. Decision & Rationale
+## 3. Red-Team Assessment (Adversarial Lenses)
+- **The YAGNI Lens**: What can be eliminated while preserving core value?
+- **The Skeptic Lens**: How does it behave under corrupt inputs, network failures, or edge cases?
+- **The Maintainer Lens**: Can this be maintained and debugged in 6 months without external documentation?
+
+---
+
+## 4. Decision & Rationale
 <!-- State clearly which option is chosen and WHY. Ground the decision in repository rules and engineering pragmatism. -->
 We choose **Option [A/B]** because...
 
 ---
 
-## 4. Consequences & Tradeoffs
+## 5. Consequences & Tradeoffs
 <!-- What becomes easier? What becomes harder? What do we give up? -->
 - **Positive**: 
 - **Negative / Neutral**: 
 
 ---
 
-## 5. Deliberate Anti-Patterns & Exclusions
+## 6. Deliberate Anti-Patterns & Exclusions
 <!-- List specific architectural patterns deliberately rejected (e.g. Factories, Base Classes, Strategy Patterns). -->
 - 
 - 
 
 ---
 
-## 6. Human Architectural Sign-Off Gate
+## 7. Human Architectural Sign-Off Gate
 - [ ] Rationale is grounded in real constraints, not speculation.
 - [ ] Alternatives fairly evaluated.
 - [ ] Veto checked: No hidden complexity or unnecessary abstractions introduced.

@@ -21,21 +21,28 @@ argument-hint: "[optional: architectural decision title or dilemma]"
 2. Scan for existing files matching `[0-9]{3}-*.md`.
 3. Select the next sequential 3-digit number (e.g. `001`, `002`, `003`).
 
-### Step 2: Formulate Concrete Alternatives
+### Step 2: Formulate Concrete Alternatives & Empirical Spikes
 Compare 2 to 3 realistic options:
 - **Option A (Concrete / Flat / Minimal)**: Inline logic, concrete functions, standard library / existing dependencies, zero speculative indirection.
 - **Option B (Modular / Pattern-Based)**: Layered abstraction, interface/strategy, separate service class. Only justify if future variability is guaranteed by requirements.
-- Evaluate pros, cons, diff impact, and maintenance overhead for each.
+- **Empirical Spike (Bake-Off)**: When an architectural tradeoff is close or high-risk, write two isolated 30-line benchmark scripts in `scratch/` to gather real latency, memory, or diff-size metrics before deciding.
 
-### Step 3: Draft the ADR Document
+### Step 3: Stress-Test with Red-Team Lenses
+Before finalizing the decision, evaluate the leading option against 3 mandatory adversarial lenses:
+1. **The YAGNI Lens**: What parts of this proposal can be deleted while preserving 90% of the user value?
+2. **The Skeptic Lens**: What breaks when inputs are invalid, concurrency is high, or dependencies fail?
+3. **The Maintainer Lens**: In 6 months, will an engineer reading only the code understand the control flow without reading this ADR?
+
+### Step 4: Draft the ADR Document
 Using `templates/adr-template.md`, structure the ADR with:
 - **Context & Problem Statement**: The exact dilemma.
 - **Options Evaluated**: Clear comparison table or bullet breakdown.
+- **Red-Team Assessment**: Summary of findings from the 3 adversarial lenses.
 - **Decision & Rationale**: The chosen path and the explicit reasons why.
 - **Consequences & Tradeoffs**: Gains and losses acknowledged upfront.
 - **Deliberate Exclusions**: Patterns avoided to keep diffs small.
 
-### Step 4: Present Checkpoint & Await Sign-Off
+### Step 5: Present Checkpoint & Await Sign-Off
 Save the ADR to `<repo-root>/docs/adr/NNN-<slug>.md`.
 
 Present the decision summary and tradeoffs to the user. Ask:

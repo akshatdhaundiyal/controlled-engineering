@@ -10,16 +10,17 @@ argument-hint: "[optional: feature description, stage question, or status check]
 
 ---
 
-## 🏛 The 6 SDLC Gates
+## 🏛 The SDLC Lifecycle & Debugging Suite
 
-| Gate | Command | When to Use | Core Artifact |
+| Gate / Mode | Command | When to Use | Core Artifact |
 | :--- | :--- | :--- | :--- |
 | **0. Scope Freeze** | `/ctl-eng-rfc` | Starting a feature, refactor, or new capability | 1-page RFC with explicit **Non-Goals** |
-| **1. Architecture Decision** | `/ctl-eng-adr` | Evaluating technical forks or structural approaches | 1-page ADR comparing 2–3 options with human veto |
+| **1. Architecture Decision** | `/ctl-eng-adr` | Evaluating technical forks or structural approaches | 1-page ADR with Red-Team Lenses & human veto |
 | **2. Verification Contract** | `/ctl-eng-verify` | Before implementing any code | Deterministic test commands & assertion matrix |
-| **3. Checkpoint & Explain** | `/ctl-eng-checkpoint` | Executing atomic implementation units | Pre-Generation Audit (Core operation + YAGNI exclusions) |
+| **3. Checkpoint & Explain** | `/ctl-eng-checkpoint` | Executing atomic implementation units | Pre-Generation Audit + Post-test simplification pass |
 | **4. Static Analysis & CI** | `/ctl-eng-audit` | After implementation units are written | Native test runner, linter, & type checker scorecard |
 | **5. Knowledge Compounding** | `/ctl-eng-compound` | After verification passes | Surgical updates to `AGENTS.md` / `GEMINI.md` |
+| **Bug Diagnosis** | `/ctl-eng-debug` | When tests fail or bugs are reported | 4-phase scientific root-cause isolation & patch |
 
 ---
 
@@ -28,11 +29,12 @@ argument-hint: "[optional: feature description, stage question, or status check]
 When invoked as `/ctl-eng`:
 
 ### Step 1: Detect Current State
-Inspect the current working directory:
-1. Is there an active RFC in progress? (`docs/rfc/` or prompt discussion)
-2. Has an architectural fork been decided? (`docs/adr/`)
-3. Is there an active Verification Contract or test suite ready?
-4. Are there pending implementation changes or unstaged git diffs?
+Inspect the current context and working directory:
+1. **Is there an active bug, error stack trace, or failing test?** -> Route immediately to `/ctl-eng-debug`.
+2. **Is there an active RFC in progress?** (`docs/rfc/` or prompt discussion) -> Continue `/ctl-eng-rfc`.
+3. **Has an architectural fork arisen?** (`docs/adr/`) -> Route to `/ctl-eng-adr`.
+4. **Is an implementation ready to code?** -> Verify test contract with `/ctl-eng-verify`.
+5. **Are there pending implementation changes or units?** -> Route to `/ctl-eng-checkpoint`.
 
 ### Step 2: Recommend the Immediate Next Gate
 Present a clear, concise status summary:

@@ -14,8 +14,8 @@ argument-hint: "[optional: unit number or description]"
    - The single core operation being performed.
    - The deliberate exclusions (abstractions, helpers, defensive wrappers omitted).
    - The proposed diff preview.
-3. **Diff Size Discipline**: Keep diffs minimal and targeted (<150 lines modified per unit).
-4. **Immediate Verification**: Run the verification command immediately after disk write.
+3. **Diff Size Discipline & Plain Language**: Keep diffs minimal and targeted (<150 lines modified per unit). Use plain, factual technical descriptions with zero AI fluff or conversational filler.
+4. **Immediate Verification & Simplification**: Run the verification command immediately after disk write, followed by an Occam's Razor simplification pass.
 
 ## Workflow
 
@@ -50,4 +50,10 @@ Ask the user:
 1. Once approved, apply the edit to disk using `replace_file_content` (prefer minimal surgical edits).
 2. Proactively run the unit's deterministic verification command (from Gate 2).
 3. Report the exact exit code and test output.
-4. If verification passes, summarize the unit and proceed to the next unit or Gate 4.
+
+### Step 5: Post-Implementation Simplification Pass (Occam's Razor)
+Once tests pass, perform an inline simplification check:
+- Can any single-use variables or intermediate assignments be eliminated?
+- Are there any leftover debug prints, trailing whitespace, or redundant comments?
+- Can the diff be trimmed by 10–20% without changing behavior?
+If a deflation opportunity is identified, apply it cleanly and re-run tests. If already minimal, proceed directly to the next unit or Gate 4.
