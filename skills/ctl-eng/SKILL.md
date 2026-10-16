@@ -17,6 +17,7 @@ argument-hint: "[optional: feature description, stage question, or status check]
 | **0. Scope Freeze** | `/ctl-eng-rfc` | Starting a feature, refactor, or new capability | 1-page RFC with explicit **Non-Goals** |
 | **1. Architecture Decision** | `/ctl-eng-adr` | Evaluating technical forks or structural approaches | 1-page ADR with Red-Team Lenses & human veto |
 | **2. Verification Contract** | `/ctl-eng-verify` | Before implementing any code | Deterministic test commands & assertion matrix |
+| **Implementation Plan** | `/ctl-eng-plan` | Authoring durable plan in `docs/plans/` | Full roadmap combining Scope, ADR, & Test contract |
 | **3. Checkpoint & Explain** | `/ctl-eng-checkpoint` | Executing atomic implementation units | Pre-Generation Audit + Post-test simplification pass |
 | **4. Static Analysis & CI** | `/ctl-eng-audit` | After implementation units are written | Native test runner, linter, & type checker scorecard |
 | **5. Knowledge Compounding** | `/ctl-eng-compound` | After verification passes | Surgical updates to `AGENTS.md` / `GEMINI.md` |

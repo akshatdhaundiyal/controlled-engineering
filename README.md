@@ -14,6 +14,7 @@ Unlike autonomous agent loops that modify multiple files without explanation or 
 | **0. Scope Freeze** | `/ctl-eng-rfc` | Starting a feature or refactor | 1-page RFC defining Problem, Goals, and strict **Non-Goals**. |
 | **1. Architecture Decision** | `/ctl-eng-adr` | Technical forks or structural choices | 1-page ADR with **Red-Team Lenses** (YAGNI, Skeptic, Maintainability) & human veto. |
 | **2. Verification Contract** | `/ctl-eng-verify` | Pre-implementation | Executable test commands, assertion matrix, and failure traps (strict TDD). |
+| **Implementation Plan** | `/ctl-eng-plan` | Durable multi-unit roadmaps | Full plan in `docs/plans/` synthesizing Scope, ADR, and Test matrix. |
 | **3. Checkpoint & Explain** | `/ctl-eng-checkpoint` | Implementation execution | Atomic units (<150 lines diff) with **Pre-Generation Audit** + **Simplification Pass**. |
 | **4. Static Analysis & CI** | `/ctl-eng-audit` | Post-implementation | Project-native test runner, linter, and type checker scorecard. |
 | **5. Knowledge Compounding** | `/ctl-eng-compound` | Feature completion | High-signal, non-redundant learnings updating repo rules (`AGENTS.md`) without doc rot. |
