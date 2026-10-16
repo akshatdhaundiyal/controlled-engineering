@@ -18,6 +18,8 @@ Unlike autonomous agent loops that modify multiple files without explanation or 
 | **4. Static Analysis & CI** | `/ctl-eng-audit` | Post-implementation | Project-native test runner, linter, and type checker scorecard. |
 | **5. Knowledge Compounding** | `/ctl-eng-compound` | Feature completion | High-signal, non-redundant learnings updating repo rules (`AGENTS.md`) without doc rot. |
 | **Bug Diagnosis** | `/ctl-eng-debug` | When tests fail or bugs occur | 4-phase scientific root-cause isolation & minimal surgical patch. |
+| **Commit & PR** | `/ctl-eng-pr` | Ready to ship verified changes | Conventional commit, branch hygiene check, structured PR with human sign-off. |
+| **PR Babysitter** | `/ctl-eng-babysit` | Monitoring open PR to merge-ready | Reactive CI failure fix & review thread resolution; leaves merge to human. |
 
 ---
 

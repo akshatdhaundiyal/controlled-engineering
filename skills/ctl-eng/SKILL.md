@@ -10,7 +10,7 @@ argument-hint: "[optional: feature description, stage question, or status check]
 
 ---
 
-## 🏛 The SDLC Lifecycle & Debugging Suite
+## 🏛 The SDLC Lifecycle & Shipping Suite
 
 | Gate / Mode | Command | When to Use | Core Artifact |
 | :--- | :--- | :--- | :--- |
@@ -21,6 +21,8 @@ argument-hint: "[optional: feature description, stage question, or status check]
 | **4. Static Analysis & CI** | `/ctl-eng-audit` | After implementation units are written | Native test runner, linter, & type checker scorecard |
 | **5. Knowledge Compounding** | `/ctl-eng-compound` | After verification passes | Surgical updates to `AGENTS.md` / `GEMINI.md` |
 | **Bug Diagnosis** | `/ctl-eng-debug` | When tests fail or bugs are reported | 4-phase scientific root-cause isolation & patch |
+| **Commit & PR** | `/ctl-eng-pr` | Ready to ship verified changes | Conventional commit, branch push, structured PR |
+| **PR Babysitter** | `/ctl-eng-babysit` | Monitoring open PR to merge-ready | Reactive CI failure fix & review thread resolution |
 
 ---
 
@@ -30,11 +32,13 @@ When invoked as `/ctl-eng`:
 
 ### Step 1: Detect Current State
 Inspect the current context and working directory:
-1. **Is there an active bug, error stack trace, or failing test?** -> Route immediately to `/ctl-eng-debug`.
-2. **Is there an active RFC in progress?** (`docs/rfc/` or prompt discussion) -> Continue `/ctl-eng-rfc`.
-3. **Has an architectural fork arisen?** (`docs/adr/`) -> Route to `/ctl-eng-adr`.
-4. **Is an implementation ready to code?** -> Verify test contract with `/ctl-eng-verify`.
-5. **Are there pending implementation changes or units?** -> Route to `/ctl-eng-checkpoint`.
+1. **Is there an open PR needing review or with failing CI?** -> Route to `/ctl-eng-babysit`.
+2. **Are all changes verified and ready to ship to GitHub?** -> Route to `/ctl-eng-pr`.
+3. **Is there an active bug, error stack trace, or failing test?** -> Route immediately to `/ctl-eng-debug`.
+4. **Is there an active RFC in progress?** (`docs/rfc/` or prompt discussion) -> Continue `/ctl-eng-rfc`.
+5. **Has an architectural fork arisen?** (`docs/adr/`) -> Route to `/ctl-eng-adr`.
+6. **Is an implementation ready to code?** -> Verify test contract with `/ctl-eng-verify`.
+7. **Are there pending implementation changes or units?** -> Route to `/ctl-eng-checkpoint`.
 
 ### Step 2: Recommend the Immediate Next Gate
 Present a clear, concise status summary:
