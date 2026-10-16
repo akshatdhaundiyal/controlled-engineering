@@ -35,15 +35,27 @@ Unlike autonomous agent loops that modify multiple files without explanation or 
 
 ## 📦 Installation & Distribution
 
-This plugin is designed to be version-controlled and published on GitHub.
+Controlled Engineering follows the open **Agent Skills** specification and is 100% compatible with [`skills.sh`](https://skills.sh) across coding agents (Antigravity, Claude Code, Cursor, Windsurf, Codex).
 
-### Option 1: Global Installation (All Projects)
-Clone into your global Antigravity/Gemini configuration directory:
+### Option 1: Install via `skills.sh` (Recommended for any Agent)
+Install all skills across your agents:
 ```bash
-git clone https://github.com/<your-username>/controlled-engineering.git ~/.gemini/config/plugins/controlled-engineering
+npx skills add akshatdhaundiyal/controlled-engineering
 ```
 
-### Option 2: Project-Local Installation (Team / Specific Repo)
+Or install a specific skill (e.g. the master orchestrator or debugging loop):
+```bash
+npx skills add akshatdhaundiyal/controlled-engineering --skill ctl-eng
+npx skills add akshatdhaundiyal/controlled-engineering --skill ctl-eng-debug
+```
+
+### Option 2: Global Plugin Installation (Antigravity / Gemini)
+Clone into your global customization directory:
+```bash
+git clone https://github.com/akshatdhaundiyal/controlled-engineering.git ~/.gemini/config/plugins/controlled-engineering
+```
+
+### Option 3: Project-Local Installation (Team / Specific Repo)
 Clone or add as a Git submodule inside your project's `.agents/plugins/` directory:
 ```bash
 git submodule add https://github.com/<your-username>/controlled-engineering.git .agents/plugins/controlled-engineering
